@@ -1,0 +1,115 @@
+@forward './reset';
+
+.section {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+
+  background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
+    url('../399609666_10231367844844559_4613896159660478989_n.jpg') no-repeat
+      center;
+  background-size: cover;
+
+  &__title {
+    width: 30rem;
+    height: 10rem;
+  }
+
+  &__svg {
+    width: 100%;
+    height: 100%;
+    fill: transparent;
+    text-shadow: 0.2rem 0.2rem 0.2rem #222;
+    stroke-width: 0.1rem;
+    stroke: #f1f1f1;
+
+    font: {
+      size: 7.5rem;
+      weight: 700;
+    }
+
+    &-text {
+      stroke-dasharray: 500;
+      stroke-dashoffset: 500;
+      animation: drawText 3s linear 1s forwards;
+    }
+  }
+
+  &__text {
+    position: absolute;
+    top: 30rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    width: 80%;
+
+    font: {
+      size: 2.5rem;
+      weight: 700;
+      style: italic;
+    }
+    text-align: center;
+
+    color: #f1f1f1;
+
+    opacity: 0;
+    visibility: hidden;
+
+    animation: moveUp 1s ease-out 2.5s forwards;
+  }
+
+  &__link {
+    width: 45rem;
+    height: 35rem;
+    box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+
+    &-img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+@keyframes moveUp {
+  to {
+    top: 26.5rem;
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes drawText {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+// ----------------------------------
+// *** Js Classes ***
+// ----------------------------------
+
+#overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgba(0, 0, 0, 0.6);
+
+  padding: 0 3rem;
+}
+
+#newImage {
+  width: 80rem;
+  height: 60rem;
+  border: 0.5rem solid #fff;
+}
